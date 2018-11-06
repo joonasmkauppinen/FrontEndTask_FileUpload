@@ -30,7 +30,7 @@ app.post('/file-upload/new-file', (req, res) => {
 		let filename = newImage.originalFilename;
 		let oldpath = newImage.path;
 		let newpath = __dirname+'/public/images/'+filename;
-		let newImageUrl = 'http://localhost:8000/images/'+filename;
+		let newImageUrl = 'http://10.114.32.14/node/images/'+filename;
 		fs.rename(oldpath, newpath, (err) => {
 			if (err) {
 				res.send(err);

@@ -1,4 +1,4 @@
-const imagesJsonUrl = 'http://localhost:8000/images/images.json';
+const imagesJsonUrl = 'http://10.114.32.14/node/images/images.json';
 const form = document.getElementById('uploadForm');
 const imageList = document.getElementById('image-list');
 
@@ -56,7 +56,7 @@ form.addEventListener('submit', (e) => {
 		body: data
 	};
 	
-	fetch('http://localhost:8000/file-upload/new-file', settings)
+	fetch('http://10.114.32.14/node/file-upload/new-file', settings)
 	.then( res => {
 		return res.text();
 	})
