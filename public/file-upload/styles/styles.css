@@ -1,0 +1,123 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	width: 100vw;
+	height: 100vh;
+	background-image: url("../img/file_upload_header.png");
+	background-position-x: 50%;
+	background-position-y: 50%;
+	background-size: cover;
+}
+
+form {
+	margin-top: 150px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#file {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.btn {
+	all: unset;
+	font-family: 'Josefin Sans', serif;
+	padding: 15px 80px;
+	border-radius: 30px;
+	margin: 15px;
+	cursor: pointer;
+}
+
+.btn-primary {
+	color: white;
+	font-size: 1.2em;
+	background-color: rgb(164, 3, 238);
+	transition: 
+		transform 100ms ease-in-out,
+		background-color 100ms ease-in-out,
+		box-shadow 100ms ease-in-out;
+}
+
+.btn-primary:hover {
+	transform: translate(0, -3px);
+	background-color: rgb(255, 20, 118);
+	box-shadow: 0 7px 30px 0px rgba(77, 0, 134, 0.3);
+}
+
+.btn-secondary {
+	text-decoration: underline;
+	font-size: 1.7em;
+	color: rgb(67, 0, 175);
+	/*border: 3px solid rgb(67, 0, 175); */
+}
+
+.divider {
+	max-width: 55em;
+	height: 3px;
+	background-color: rgba(204, 0, 255, 0.1);
+	margin: 45px auto 75px;
+	border-radius: 5px;
+}
+
+.grid {
+	max-width: 55em;
+	margin: 30px auto 150px;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
+	grid-auto-rows: 1fr;
+	grid-gap: 25px;
+}
+
+.grid::before {
+	content: '';
+	width: 0;
+	padding-bottom: 100%;
+	grid-row: 1 / 1;
+	grid-column: 1 / 1;
+}
+
+.grid > *:first-child {
+	grid-row: 1 / 1;
+	grid-column: 1 / 1;
+}
+
+li {
+	list-style: none;
+}
+
+img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	overflow: hidden;
+	border-radius: 13px;
+	box-shadow: 0 5px 22px -5px #4c006e7a;
+	transition: transform 400ms cubic-bezier(0, 0, 0.27, 1.55),
+	box-shadow 400ms cubic-bezier(0, 0, 0.27, 1.55);
+}
+
+img:hover {
+	transform: translate(0, -5px);
+	box-shadow: 0 10px 42px -2px #4c006e4f;
+}
+
+@media only screen and (max-width: 915px) {
+	
+	.grid {
+		margin: 30px 15px;
+	}
+
+	.divider {
+		margin: 0 15px;
+	}
+	
+}
